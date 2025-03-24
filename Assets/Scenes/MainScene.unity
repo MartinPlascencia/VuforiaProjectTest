@@ -431,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 596270050}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19062795, y: -0, z: -0, w: 0.9816624}
-  m_LocalPosition: {x: 0, y: 1.81, z: -3.54}
+  m_LocalPosition: {x: 0, y: 0.14, z: -0.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusFilter: 1
+  StatusFilter: 0
   UsePoseSmoothing: 0
   AnimationCurve:
     serializedVersion: 2
@@ -625,14 +625,14 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: updated_pattern
+  mTrackableName: elvis_card
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Uteca.xml
-  mAspectRatio: 1.0042553
-  mImageTargetType: 0
-  mWidth: 3
-  mHeight: 3.012766
-  mRuntimeTexture: {fileID: 0}
+  mAspectRatio: 1.485
+  mImageTargetType: 3
+  mWidth: 0.13468014
+  mHeight: 0.2
+  mRuntimeTexture: {fileID: 2800000, guid: cb52fd2a2b0b62d4da67932bd602125c, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1536141583}
   mHiddenRoot: {fileID: 0}
-  mTargetName: updated_pattern
+  mTargetName: elvis_card
   mDatasetName: Vuforia/Uteca.xml
   mCastedBehaviour: {fileID: 1536141583}
   mMeshFilter: {fileID: 0}
@@ -682,27 +682,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6c462ee52b0208843acf759dbf44bea3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.729289
+      value: 0.050891317
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c462ee52b0208843acf759dbf44bea3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.729289
+      value: 0.050891317
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c462ee52b0208843acf759dbf44bea3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.729289
+      value: 0.050891317
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c462ee52b0208843acf759dbf44bea3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.046342
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c462ee52b0208843acf759dbf44bea3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c462ee52b0208843acf759dbf44bea3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.059727
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c462ee52b0208843acf759dbf44bea3, type: 3}
       propertyPath: m_LocalRotation.w
