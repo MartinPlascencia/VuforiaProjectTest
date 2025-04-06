@@ -18,8 +18,13 @@ public class BattleManager : MonoBehaviour
     public UnityEvent onBattleStart;
     [SerializeField]
     private UnityEvent onBattleStop;
+    [SerializeField]
+    private UnityEvent onBattleEnd;
+    [SerializeField]
+    private UnityEvent<string> onFighterWins;
     private int currentFighterIndex = 0;
     private bool isBattleActive = false;
+    private Coroutine attackCoroutine;
     public void AddFighter(Fighter fighter)
     {
         fighters.Add(fighter);
@@ -39,15 +44,19 @@ public class BattleManager : MonoBehaviour
         } 
         else
         {
-            StartBattle();
+            Invoke("StartBattle", secondsToStartBattle);
         }
     }
 
     private void StartBattle()
     {
+        if (isBattleActive || fighters.Count < requiredFighters)
+        {
+            return; 
+        }
         isBattleActive = true;
         onBattleStart?.Invoke();
-        StartCoroutine(Attack());
+        attackCoroutine = StartCoroutine(Attack());
     }
 
     private IEnumerator Attack()
@@ -76,17 +85,28 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(secondsBetweenAttacks);
         if (defender.GetComponent<Health>().CurrentHealth > 0)
         {
-            StartCoroutine(Attack());
+            attackCoroutine = StartCoroutine(Attack());
         } else
         {
-            StopBattle();
+            BattleFinish(attacker.FighterName);
         }
+    }
+
+    private void BattleFinish(string winnerName)
+    {
+        StopBattle();
+        onBattleEnd?.Invoke();
+        onFighterWins?.Invoke(winnerName);
     }
 
     private void StopBattle()
     {
         isBattleActive = false;
-        StopCoroutine(Attack());
+        if (attackCoroutine != null)
+        {
+            StopCoroutine(attackCoroutine);
+            attackCoroutine = null;
+        }
         onBattleStop?.Invoke();
     }
 }
